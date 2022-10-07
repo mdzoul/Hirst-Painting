@@ -23,6 +23,7 @@ def draw_dot(num_colors):
     t.colormode(255)
     dot_color = r.choice(color(num_colors))
 
+    # dot(size=, color=)
     alex.dot(20, dot_color)
     alex.penup()
     alex.fd(40)
@@ -32,6 +33,7 @@ def painting(size):
     for n in range(1, size):
         for j in range(2):
             for dot in range(n):
+                # Choose number of colors to sample from .jpg
                 draw_dot(30)
             alex.rt(90)
 
