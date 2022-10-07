@@ -40,6 +40,7 @@ alex = t.Turtle()
 alex.speed(0)
 alex.hideturtle()
 
+# Change the size of painting
 painting(15)
 
 screen = t.Screen()
