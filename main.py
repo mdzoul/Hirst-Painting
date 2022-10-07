@@ -1,14 +1,46 @@
 import colorgram
+import random as r
+import turtle as t
 
-# Extract 6 colors from an image.
-colors = colorgram.extract('Kirby_and_The_Forgotten_Land_Icon.jpg', 6)
 
-first_color = colors[0]
-rgb = first_color.rgb
+def color(num_colors):
+    """Extracts color palette from .jpg file"""
+    colors = colorgram.extract('Kirby_and_The_Forgotten_Land_Icon.jpg', num_colors)
 
-r = rgb[0]
-g = rgb[1]
-b = rgb[2]
+    colors_in_jpg = []
+    for i in range(0, num_colors):
+        extract_colors = colors[i]
+        rgb = extract_colors.rgb
 
-color1 = (r, g, b)
-print(color1)
+        rgb_tuple = (rgb[0], rgb[1], rgb[2])
+        colors_in_jpg.append(rgb_tuple)
+
+    return colors_in_jpg
+
+
+def draw_dot(num_colors):
+    """Draws the dot"""
+    t.colormode(255)
+    dot_color = r.choice(color(num_colors))
+
+    alex.dot(20, dot_color)
+    alex.penup()
+    alex.fd(40)
+
+
+def painting(size):
+    for n in range(1, size):
+        for j in range(2):
+            for dot in range(n):
+                draw_dot(30)
+            alex.rt(90)
+
+
+alex = t.Turtle()
+alex.speed(0)
+alex.hideturtle()
+
+painting(15)
+
+screen = t.Screen()
+screen.exitonclick()
