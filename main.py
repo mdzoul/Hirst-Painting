@@ -37,6 +37,8 @@ def painting(size):
                 draw_dot(30)
             alex.rt(90)
 
+screen = t.Screen()
+screen.title("Python Hirst Painting")
 
 alex = t.Turtle()
 alex.speed(0)
@@ -45,5 +47,4 @@ alex.hideturtle()
 # Change the size of painting
 painting(15)
 
-screen = t.Screen()
 screen.exitonclick()
